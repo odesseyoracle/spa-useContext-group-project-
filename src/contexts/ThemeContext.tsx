@@ -10,6 +10,8 @@ import {
 type Context = {
   darkMode: boolean;
   setDarkMode: Dispatch<SetStateAction<boolean>>;
+  userData: object;
+  setUserData: Dispatch<SetStateAction<object>>;
 };
 
 // Create a new context with the defined type
@@ -35,9 +37,11 @@ export const useThemeContext = () => {
 export function ThemeContextProvider({ children }: { children: ReactNode }) {
   const [darkMode, setDarkMode] = useState(false);
 
+  const [userData, setUserData] = useState({});
+
   // Render the ThemeContextProvider component with the global state value and setter
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+    <ThemeContext.Provider value={{ darkMode, setDarkMode, userData, setUserData }}>
       {children} {/* Render the child components (all wrapped components) */}
     </ThemeContext.Provider>
   );
