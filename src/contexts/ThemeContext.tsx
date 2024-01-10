@@ -11,7 +11,13 @@ type Context = {
   darkMode: boolean;
   setDarkMode: Dispatch<SetStateAction<boolean>>;
   userData: object;
-  setUserData: Dispatch<SetStateAction<object>>;
+  setUserData: Dispatch<SetStateAction<{
+    userName: string,
+    fName: string,
+    lName: string,
+    password: string,
+    isLoggedIn: boolean
+  }>>;
 };
 
 // Create a new context with the defined type
@@ -40,13 +46,11 @@ export function ThemeContextProvider({ children }: { children: ReactNode }) {
   const [darkMode, setDarkMode] = useState(false);
 
   const [userData, setUserData] = useState({
-<<<<<<< HEAD
-=======
-    username: "",
+    userName: "",
     fName: "",
     lName: "",
     password: "",
->>>>>>> feature-profile
+    isLoggedIn: false
   });
 
   // Render the ThemeContextProvider component with the global state value and setter
