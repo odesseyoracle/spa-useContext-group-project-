@@ -27,7 +27,9 @@ const ThemeContext = createContext<Context | null>(null);
 export const useThemeContext = () => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error("ThemeContext must be used within a ThemeContextContextProvider");
+    throw new Error(
+      "ThemeContext must be used within a ThemeContextContextProvider"
+    );
   }
   return context;
 };
@@ -38,11 +40,20 @@ export function ThemeContextProvider({ children }: { children: ReactNode }) {
   const [darkMode, setDarkMode] = useState(false);
 
   const [userData, setUserData] = useState({
+<<<<<<< HEAD
+=======
+    username: "",
+    fName: "",
+    lName: "",
+    password: "",
+>>>>>>> feature-profile
   });
 
   // Render the ThemeContextProvider component with the global state value and setter
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode, userData, setUserData }}>
+    <ThemeContext.Provider
+      value={{ darkMode, setDarkMode, userData, setUserData }}
+    >
       {children} {/* Render the child components (all wrapped components) */}
     </ThemeContext.Provider>
   );
