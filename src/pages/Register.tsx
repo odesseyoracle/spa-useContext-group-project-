@@ -18,7 +18,7 @@ export default function Register() {
 
   function submitUserData(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault();
-    setUserData(formData)
+    setUserData({...formData, isLoggedIn: true})
   }
 
 

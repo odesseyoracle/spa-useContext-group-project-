@@ -37,7 +37,8 @@ export const useThemeContext = () => {
 export function ThemeContextProvider({ children }: { children: ReactNode }) {
   const [darkMode, setDarkMode] = useState(false);
 
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState({
+  });
 
   // Render the ThemeContextProvider component with the global state value and setter
   return (
